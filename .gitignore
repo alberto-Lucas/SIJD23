@@ -12,3 +12,9 @@ HC/Library/SceneVisibilityState.asset
 *.asset
 HC/Library/SourceAssetDB
 HC/Library/ArtifactDB
+HC/Temp/workerlic
+HC/Temp/UnityLockfile
+HC/Library/EditorInstance.json
+HC/Library/ArtifactDB
+HC/Library/SourceAssetDB
+*.log
