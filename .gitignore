@@ -8,3 +8,7 @@ HC/Library/ArtifactDB
 HC/Library/SourceAssetDB
 HC/Library/SceneVisibilityState.asset
 *.asset
+*.dwlt
+*.asset
+HC/Library/SourceAssetDB
+HC/Library/ArtifactDB
