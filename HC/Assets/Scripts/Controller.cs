@@ -29,18 +29,26 @@ public class Controller : MonoBehaviour
             SetTorque(speed);
         else if (movement == 1)
             SetTorque(-speed);
+        else
+            SetTorque(0);
     }
 
     void SetTorque(float speed)
     {
+        int nitro;
+        nitro = 1;
+
         if (FuelDisplay.instance.GetFuel() > 0)
-        { 
+        {
+            if (NitroDisplay.instance.GetNitro() > 0)
+                nitro = 10;
+
             foreach (Axle axle in axles)
             {
                 axle.wheel.AddTorque(
-                    speed * axle.torque * Time.fixedDeltaTime);
+                    speed * (axle.torque * nitro) * Time.fixedDeltaTime );
                 carRig.AddTorque(
-                    -speed * axle.torque * Time.fixedDeltaTime);
+                    -speed * (axle.torque * nitro) * Time.fixedDeltaTime);
             }
         }
     }
