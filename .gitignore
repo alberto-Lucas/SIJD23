@@ -3,3 +3,8 @@ HC/Library/SourceAssetDB
 HC/Library/SceneVisibilityState.asset
 HC/Library/CurrentLayout-default.dwlt
 HC/Library/ArtifactDB
+HC/Library/ArtifactDB
+*.dwlt
+HC/Library/SourceAssetDB
+HC/Library/SceneVisibilityState.asset
+*.asset
