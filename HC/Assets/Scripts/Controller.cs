@@ -6,8 +6,10 @@ public class Controller : MonoBehaviour
 {
     public Rigidbody2D carRig; //corpo do veiculo
     public float speed;//variavel para a velocidade
+    public int nitro;
     public Axle[] axles;//eixos do veiculo
     private float movement;//variavel para o calculo de movimento
+    
 
     [System.Serializable]
     public class Axle
@@ -33,14 +35,19 @@ public class Controller : MonoBehaviour
 
     void SetTorque(float speed)
     {
+        int nitroTemp;
+        nitroTemp = 1;
         if (FuelDisplay.instance.GetFuel() > 0)
         { 
+            if (NitroDisplay.instance.GetNitro() > 0)
+                nitroTemp = nitro;
+
             foreach (Axle axle in axles)
             {
                 axle.wheel.AddTorque(
-                    speed * axle.torque * Time.fixedDeltaTime);
+                    speed * (axle.torque * nitroTemp) * Time.fixedDeltaTime);
                 carRig.AddTorque(
-                    -speed * axle.torque * Time.fixedDeltaTime);
+                    -speed * (axle.torque * nitroTemp) * Time.fixedDeltaTime);
             }
         }
     }
